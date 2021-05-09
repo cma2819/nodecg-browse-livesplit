@@ -1,0 +1,11 @@
+.cache
+node_modules
+coverage
+bower_components
+
+/cfg
+/db
+
+# belows should not ignore on master branch.
+/dashboard
+/graphics
