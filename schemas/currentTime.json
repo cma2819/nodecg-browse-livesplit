@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "day": {
+            "type": "number"
+        },
+        "hour": {
+            "type": "number"
+        },
+        "minute": {
+            "type": "number"
+        },
+        "second": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "day", "hour", "minute", "second"
+    ]
+}

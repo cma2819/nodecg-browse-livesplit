@@ -1,10 +1,13 @@
 import { Assets } from "./asset";
+import { CurrentTime } from './generated';
 
 type ReplicantMap = {
-    assets: Assets
+    assets: Assets,
+    currentTime: CurrentTime
 };
 
 export {
     Assets,
+    CurrentTime,
     ReplicantMap
 };

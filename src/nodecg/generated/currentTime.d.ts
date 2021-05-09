@@ -5,9 +5,9 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface Configschema {
-	livesplit: {
-		address: string;
-		tick?: number;
-	};
+export interface CurrentTime {
+	day: number;
+	hour: number;
+	minute: number;
+	second: number;
 }

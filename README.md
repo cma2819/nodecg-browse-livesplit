@@ -1,3 +1,10 @@
-# nodecg-vue-ts-template
+# nodecg-browse-livesplit
 
-NodeCG bundle template with Vue.ts and Vuex
+## Install
+
+GitHubの[リリースページ](https://github.com/cma2819/nodecg-browse-livesplit/releases)からzipをダウンロードしてください.
+
+## Usage
+
+
+

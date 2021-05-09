@@ -7,5 +7,6 @@ bower_components
 /db
 
 # belows should not ignore on master branch.
-/dashboard
-/graphics
+# /dashboard
+# /graphics
+# /extensions

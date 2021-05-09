@@ -1,34 +1,24 @@
 {
-    "name": "bundle-name",
+    "name": "nodecg-browse-livesplit",
     "version": "0.9.0",
-    "description": "<Description of this bundle>",
-    "homepage": "<homepage url>",
-    "author": "<author>",
+    "description": "NodeCG Bundle for browse livesplit",
+    "homepage": "https://github.com/cma2819/nodecg-browse-livesplit",
+    "author": "Cma",
     "files": [
-        "dashboard",
         "graphics",
         "extension.js",
         "extension"
     ],
     "keywords": [
-        "",
+        "livesplit",
         "nodecg-bundle"
     ],
     "nodecg": {
         "compatibleRange": "^1.1.1",
-        "dashboardPanels": [
-            {
-                "name": "example",
-                "title": "Example Dashboard",
-                "width": "2",
-                "headerColor": "#bcbcff",
-                "file": "index.html"
-            }
-        ],
         "graphics": [
             {
                 "file": "index.html",
-                "width": 1920,
+                "width": 280,
                 "height": 150
             }
         ]
@@ -39,10 +29,8 @@
         "autofix:browser": "eslint --fix --ext .ts,.vue src/browser",
         "autofix:extension": "eslint --fix --ext .ts src/extension",
         "build": "run-s build:*",
-        "build:dashboard": "parcel build src/browser/dashboard/*/*.html --out-dir dashboard --public-url ./",
         "build:extension": "tsc -b src/extension/",
         "build:graphics": "parcel build src/browser/graphics/*/*.html --out-dir graphics --public-url ./",
-        "watch:dashboard": "parcel watch src/browser/dashboard/*/*.html --out-dir dashboard --public-url ./",
         "watch:extension": "tsc -b src/extension/ -w",
         "watch:graphics": "parcel watch src/browser/graphics/*/*.html --out-dir graphics --public-url ./",
         "start": "node ../..",
@@ -50,11 +38,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+<Git repository URL>"
+        "url": "git+https://github.com/cma2819/nodecg-browse-livesplit.git"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/<author>/<repository>/issues"
+        "url": "https://github.com/cma2819/nodecg-browse-livesplit/issues"
     },
     "devDependencies": {
         "@types/node": "^13.13.40",
@@ -75,7 +63,9 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
+        "livesplit-client": "^1.0.0",
         "vue": "^2.6.12",
+        "vue-hot-reload-api": "^2.3.4",
         "vuetify": "^2.4.3",
         "vuex": "^3.6.2"
     }
