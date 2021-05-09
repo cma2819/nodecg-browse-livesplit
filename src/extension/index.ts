@@ -24,8 +24,12 @@ export =  (nodecg: NodeCG): void => {
         logger.info('Connected!');
         
         setInterval(async () => {
-          currentTimeRep.value = timeStringToObject(await lsClient.getCurrentTime());
-          logger.debug(`ct: ${JSON.stringify(currentTimeRep.value)}`);
+          try {
+            currentTimeRep.value = timeStringToObject(await lsClient.getCurrentTime());
+            logger.debug(`ct: ${JSON.stringify(currentTimeRep.value)}`); 
+          } catch (_) {
+            logger.warn('error happened, skip save current time.');
+          }
         }, lsConfig.tick || 100);
       });
 
