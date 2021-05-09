@@ -18,6 +18,21 @@ module.exports = function (nodecg) {
         // Connected event
         lsClient.on('connected', function () {
             logger.info('Connected!');
+            setInterval(function () { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
+                var _a, _b;
+                return tslib_1.__generator(this, function (_c) {
+                    switch (_c.label) {
+                        case 0:
+                            _a = currentTimeRep;
+                            _b = utils_1.timeStringToObject;
+                            return [4 /*yield*/, lsClient.getCurrentTime()];
+                        case 1:
+                            _a.value = _b.apply(void 0, [_c.sent()]);
+                            logger.debug("ct: " + JSON.stringify(currentTimeRep.value));
+                            return [2 /*return*/];
+                    }
+                });
+            }); }, lsConfig.tick || 100);
         });
         // Disconnected event
         lsClient.on('disconnected', function () {
@@ -28,19 +43,4 @@ module.exports = function (nodecg) {
     catch (err) {
         logger.error(err);
     }
-    setInterval(function () { return tslib_1.__awaiter(void 0, void 0, void 0, function () {
-        var _a, _b;
-        return tslib_1.__generator(this, function (_c) {
-            switch (_c.label) {
-                case 0:
-                    _a = currentTimeRep;
-                    _b = utils_1.timeStringToObject;
-                    return [4 /*yield*/, lsClient.getCurrentTime()];
-                case 1:
-                    _a.value = _b.apply(void 0, [_c.sent()]);
-                    logger.debug("ct: " + JSON.stringify(currentTimeRep.value));
-                    return [2 /*return*/];
-            }
-        });
-    }); }, lsConfig.tick || 100);
 };

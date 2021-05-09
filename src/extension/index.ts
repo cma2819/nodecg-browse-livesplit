@@ -22,6 +22,11 @@ export =  (nodecg: NodeCG): void => {
       // Connected event
       lsClient.on('connected', () => {
         logger.info('Connected!');
+        
+        setInterval(async () => {
+          currentTimeRep.value = timeStringToObject(await lsClient.getCurrentTime());
+          logger.debug(`ct: ${JSON.stringify(currentTimeRep.value)}`);
+        }, lsConfig.tick || 100);
       });
 
       // Disconnected event
@@ -35,8 +40,4 @@ export =  (nodecg: NodeCG): void => {
     logger.error(err);
   }
 
-  setInterval(async () => {
-    currentTimeRep.value = timeStringToObject(await lsClient.getCurrentTime());
-    logger.debug(`ct: ${JSON.stringify(currentTimeRep.value)}`);
-  }, lsConfig.tick || 100);
 }
