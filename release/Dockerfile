@@ -12,7 +12,6 @@ RUN npm install -g nodecg-cli && \
 RUN nodecg install cma2819/nodecg-browse-livesplit
 WORKDIR /nodecg/bundles/nodecg-browse-livesplit
 RUN nodecg defaultconfig
-RUN npm install --production
 
 WORKDIR /
 
